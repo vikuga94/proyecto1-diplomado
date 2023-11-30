@@ -1,0 +1,301 @@
+* {
+    /*border-style: dashed;*/
+    box-sizing: border-box;
+}
+
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css';
+
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+#container {
+    grid-template-areas:
+        'header header header'
+        'nav    nav    nav'
+        'slider slider slider'
+        'section section section'
+        'footer footer footer'
+    ;
+    column-gap: 10px;
+    align-items: center;
+}
+
+
+/* HEader */
+.header {
+    grid-area: header;
+    background: #013d59;
+    color: #ffffff;
+}
+
+
+.nav1 {
+    padding: 10px;
+}
+
+
+.nav1 i {
+    margin-left: 15px;
+}
+
+/* Fin HEader */
+
+
+/* Nav */
+.nav {
+    grid-area: nav;
+    background: #ffffff;
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+
+.logo img {
+    width: 80%;
+}
+
+
+.nav2 ul {
+    display: flex;
+    list-style: none;
+    align-content: center;
+}
+
+.nav2 a {
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 15px;
+}
+
+
+.nav2 a:hover {
+    color: orange;
+}
+
+
+.button {
+    background: #81c168;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Fin Nav */
+
+
+/* Slider */
+.slider {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Utiliza un contenedor flexible para las imágenes */
+    transition: transform 0.5s ease;
+}
+
+.slider-container {
+    max-width: 100%;
+    overflow: hidden; /* Oculta las imágenes que se desbordan del contenedor */
+}
+
+.slider img {
+    width: 100%; /* Ajusta cada imagen al 100% del ancho del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+/* Fin Slider */
+
+
+/* Section */
+.section {
+    grid-area: section;
+}
+
+
+.articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+
+
+.article img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+
+.article button {
+    background: #81c168;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+
+.article span {
+    color: #013d59;
+    font-size: small;
+    margin-right: 15px;
+}
+
+
+/* Fin Section */
+
+
+.footer {
+    grid-area: footer;
+    background: #013d59;
+}
+
+
+.foot {
+    color: #ffffff;
+    text-align: center;
+    height: auto;
+    padding: 30px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+
+  #btnmenu{
+    display: none;
+}
+
+/*
+ Media Queries
+ */
+
+ @media all and (max-width: 375.99999px){
+    .logo{
+        display: none;
+    }
+
+    .menu{
+        align-items: left;
+    }
+
+    .nav2 ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        flex-wrap: wrap;
+        list-style: none;
+        display: none;
+        margin-top: -20px;
+        z-index: 999;
+    }
+
+    .nav2 a{
+        font-weight: lighter;
+    }
+
+    .slider {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex; /* Utiliza un contenedor flexible para las imágenes */
+        transition: transform 0.5s ease;
+    }
+
+    .slider-container {
+        max-width: 100%;
+        overflow: hidden; /* Oculta las imágenes que se desbordan del contenedor */
+    }
+    
+    .slider img {
+        width: 100%; /* Ajusta cada imagen al 100% del ancho del contenedor */
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+    }
+    
+
+    .articles {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        row-gap: 10px;
+        width: 100% ;
+    }
+
+    #btnmenu{
+        background: transparent;
+        font-size: 1rem;
+        display: block;
+        padding: 25px;
+        opacity: 0.5;
+        border: none;
+    }
+
+    #btnmenu:hover{
+        opacity: 3;
+    }
+
+    #nav-items{
+        height: 200px;
+    }
+
+    
+
+
+ }
